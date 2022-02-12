@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="toDoList">
+        <div class="title">To Do list</div>
+        <div class="function">
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="請輸入內容並按下新增"
+            class="enter"
+          />
+          <button class="add">+</button>
+        </div>
+        <div class="sort">
+          <button class="all">all</button>
+          <button class="complete">complete</button>
+          <button class="undone">undone</button>
+        </div>
+
+        <div class="list all"></div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"
+    integrity="sha512-gh+25Y0CTHtw1FSJ4gDKYDFlZ84oV0l1bY5v7xrIwep7M1aV+7JgUaTu55bMerCblbPUD22MKlStyUwO9lHq4w=="
+    crossorigin="anonymous"
+  ></script>
+  <script src="./js/index.js"></script>
+</html>
