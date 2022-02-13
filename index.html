@@ -37,6 +37,7 @@
 
         <div class="list all">
           <div class="matter" v-for="(item,index) in listContent">
+            <!-- <div class="index" style="display: none">{{ index }}</div> -->
             <button class="status undone"><i class="fas fa-times"></i></button>
             <input
               type="text"
@@ -46,7 +47,9 @@
               @blur="blurContent"
               @mouseover="mouseoverContent"
             />
-            <button class="delete"><i class="far fa-trash-alt"></i></button>
+            <button class="delete" @click="clickDelete" :value="item.index">
+              <i class="far fa-trash-alt"></i>
+            </button>
           </div>
         </div>
       </div>

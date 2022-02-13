@@ -5,7 +5,8 @@ let data = {
     statu: 'undone',
     matterContent: ''
   },
-  listContent: []
+  listContent: [],
+  vueDataIndex: this.index
 }
 
 let vm = new Vue({
@@ -33,6 +34,13 @@ let vm = new Vue({
     mouseoverContent: function (e) {
       if (e.target.scrollWidth > e.target.offsetWidth) {
         e.target.title = e.target.value
+      }
+    },
+    clickDelete: function (e) {
+      if (e.target.classList.contains('fa-trash-alt')) {
+        e.target.parentNode.parentNode.remove()
+        this.listContent.splice(e.target.parentNode.value, 1)
+        this.index--
       }
     }
   }
