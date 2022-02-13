@@ -29,6 +29,11 @@ let vm = new Vue({
     },
     blurContent: function (e) {
       e.target.parentNode.style.border = 0
+    },
+    mouseoverContent: function (e) {
+      if (e.target.scrollWidth > e.target.offsetWidth) {
+        e.target.title = e.target.value
+      }
     }
   }
 })
