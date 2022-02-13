@@ -25,6 +25,7 @@
             id=""
             placeholder="請輸入內容並按下新增"
             class="enter"
+            v-model="input.matterContent"
           />
           <button class="add" @click="clickAdd">+</button>
         </div>
@@ -34,7 +35,19 @@
           <button class="undone">undone</button>
         </div>
 
-        <div class="list all"></div>
+        <div class="list all">
+          <div class="matter" v-for="(item,index) in listContent">
+            <button class="status undone"><i class="fas fa-times"></i></button>
+            <input
+              type="text"
+              class="content"
+              v-model="item.matterContent"
+              @click="clickContent"
+              @blur="blurContent"
+            />
+            <button class="delete"><i class="far fa-trash-alt"></i></button>
+          </div>
+        </div>
       </div>
     </div>
   </body>

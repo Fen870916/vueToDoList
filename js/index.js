@@ -1,5 +1,11 @@
 let data = {
-  title: 'To Do List'
+  title: 'To Do List',
+  index: 0,
+  input: {
+    statu: 'undone',
+    matterContent: ''
+  },
+  listContent: []
 }
 
 let vm = new Vue({
@@ -7,18 +13,22 @@ let vm = new Vue({
   data: data,
   methods: {
     clickAdd: function () {
-      if (document.querySelector('.enter').value.trim().length !== 0) {
-        let matter = document.createElement('div')
-        matter.classList.add('matter')
-        matter.innerHTML =
-          `<button class="status undone"><i class="fas fa-times"></i></button>
-      <div class="content">` +
-          document.querySelector('.enter').value +
-          `</div>
-          <button class="delete"><i class="far fa-trash-alt"></i></button>`
-        document.querySelector('.list').appendChild(matter)
-        document.querySelector('.enter').value = ''
+      if (this.input.matterContent.trim()) {
+        let { statu, matterContent, index } = ''
+        this.listContent.push({
+          index: this.index,
+          statu: this.input.statu,
+          matterContent: this.input.matterContent
+        })
+        this.input.matterContent = ''
+        this.index++
       }
+    },
+    clickContent: function (e) {
+      e.target.parentNode.style.border = '1px solid red'
+    },
+    blurContent: function (e) {
+      e.target.parentNode.style.border = 0
     }
   }
 })
